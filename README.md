@@ -1,1 +1,1 @@
-# leetCodeCppSolutions
+# LeetCode Java and C++ solutions
