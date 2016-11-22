@@ -6,7 +6,7 @@ import java.util.Stack;
  * Created by gungr on 21/11/2016.
  */
 public class LongestAbsoluteFilePath {
-	// LeetCode 388. Longest Absolute File Path
+    // LeetCode 388. Longest Absolute File Path
     public static int lengthLongestPath(String input) {
         Stack<Integer> stack = new Stack<>();
         stack.push(0);  // Layer 0, dummy head
@@ -18,9 +18,10 @@ public class LongestAbsoluteFilePath {
             int length = stack.peek() + s.length() - layer + 1; // remove "\t\t..." add "\"
             if(layer == 0)  // dir has no "\t" in the front
                 length--;
-            stack.push(length);
             if(s.contains("."))
                 maxLen = Math.max(maxLen, length);
+            else
+                stack.push(length);
         }
         return maxLen;
     }
